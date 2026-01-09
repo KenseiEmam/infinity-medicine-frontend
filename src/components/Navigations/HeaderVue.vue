@@ -13,7 +13,7 @@
       </div>
       <button class="flex md:hidden ml-auto" @click="mobileOpen = !mobileOpen">
         <svg
-          class="w-4 h-4 mt-[1px]"
+          class="w-4 h-4 mt-[1px] text-infin dark:text-white"
           :class="mobileOpen ? 'rotate-180' : ''"
           fill="none"
           stroke="currentColor"
@@ -179,7 +179,10 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="mobileOpen" class="md:hidden shadow-lg border-t max-h-[80vh] overflow-y-auto p-6">
+    <div
+      v-show="mobileOpen"
+      class="md:hidden shadow-lg border-t border-infin-teritiary dark:border-gray-400 max-h-[80vh] overflow-y-auto p-6"
+    >
       <nav class="flex flex-col gap-4">
         <RouterLink
           to="/"
@@ -197,11 +200,13 @@
           class="text-lg font-medium hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase"
           >Locations</RouterLink
         >
-        <details class="border-t pt-4">
-          <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+        <details class="border-t border-infin-teritiary dark:border-gray-400 pt-4">
+          <summary
+            class="flex justify-between items-center cursor-pointer text-lg font-medium text-infin-secondary dark:text-gray-400"
+          >
             Ophthalmology
             <svg
-              class="w-5 h-5 transition-transform"
+              class="w-5 h-5 text-infin dark:text-white transition-transform"
               fill="none"
               stroke="currentColor"
               stroke-extra-trackingth="2"
@@ -216,14 +221,16 @@
               v-for="item in oph"
               :key="item.to"
               :to="item.to"
-              class="py-1 rounded hover:bg-gray-300 px-2 transition"
+              class="py-1 rounded hover:bg-gray-300 px-2 transition text-infin-secondary dark:text-gray-400"
             >
               {{ item.label }}
             </RouterLink>
           </div>
         </details>
-        <details class="border-t pt-4">
-          <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+        <details class="border-t border-infin-teritiary dark:border-gray-400 pt-4">
+          <summary
+            class="flex justify-between items-center cursor-pointer text-lg font-medium text-infin-secondary dark:text-gray-400"
+          >
             Dermatology
             <svg
               class="w-5 h-5 transition-transform"
@@ -241,7 +248,7 @@
               v-for="item in [...dermprod, ...dermeq]"
               :key="item.to"
               :to="item.to"
-              class="py-1 rounded hover:bg-gray-300 px-2 transition"
+              class="py-1 rounded hover:bg-gray-300 px-2 transition text-infin-secondary dark:text-gray-400"
             >
               {{ item.label }}
             </RouterLink>
