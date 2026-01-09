@@ -32,8 +32,10 @@
             >
           </div>
           <div class="flex flex-wrap gap-4">
-            <a data-slot="button" class="btn-lg" href="/quote">Start a Partnership</a
-            ><a data-slot="button" class="btn-lg-outline" href="/products">View Our Devices</a>
+            <a data-slot="button" class="btn-lg" href="/ophthalmology">Ophthalmology Solutions</a
+            ><a data-slot="button" class="btn-lg-outline" href="/dermatology"
+              >Dermatology Solutions</a
+            >
           </div>
         </div>
         <div

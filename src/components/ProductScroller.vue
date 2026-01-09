@@ -39,7 +39,9 @@
           >
             Learn More
           </RouterLink>
-          <button :href="'/quote?interest=' + p.slug" class="w-full btn-lg">Request Quote</button>
+          <a :href="'quote?interest=' + p.slug" class="w-full btn-lg text-center block w-full"
+            >Request Quote</a
+          >
         </div>
       </div>
     </div>
