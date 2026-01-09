@@ -241,8 +241,8 @@ const dermeq = [
   // { label: 'PLEXR', to: '/products/plexr' },
 ]
 const dermprod = [
-  { label: 'QR678 Injectable', to: '/products/qr678-injectable' },
-  { label: 'QR678 Shampoo', to: '/products/qr678-fortifying-shampoo' },
+  { label: 'QR678 Injectable', to: '/products/qr-678-injectable' },
+  { label: 'QR678 Shampoo', to: '/products/qr-678-fortifying-shampoo' },
   { label: 'Skin-F', to: '/products/skin-f' },
   { label: 'EPTQ Filler', to: '/products/e-p-t-q-filler' },
 ]
