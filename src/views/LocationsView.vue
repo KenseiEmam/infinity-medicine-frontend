@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <!-- HERO -->
-    <section class="relative overflow-hidden py-16">
+    <section v-reveal="'up'" class="relative overflow-hidden py-16">
       <div
         class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-secondary/40 via-infin-secbg to-infin-pribg"
       ></div>
@@ -37,7 +37,7 @@
       </div>
     </section>
     <!-- LOCATIONS -->
-    <section class="py-16 container">
+    <section v-reveal="'left'" class="py-16 container">
       <div class="max-w-5xl mx-auto space-y-6">
         <div class="grid gap-6 md:grid-cols-2">
           <div
@@ -299,7 +299,10 @@
       </div>
     </section>
     <!-- SUPPORT -->
-    <section class="py-16 container border-t border-infin-teritiary/30 max-w-4xl">
+    <section
+      v-reveal="'right'"
+      class="py-16 container border-t border-infin-teritiary/30 max-w-4xl"
+    >
       <div class="max-w-4xl space-y-6 text-center mx-auto">
         <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
           Need Assistance in Your Market?
