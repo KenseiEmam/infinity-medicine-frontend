@@ -2,7 +2,7 @@
   <div class="max-w-3xl mx-auto space-y-2">
     <div v-for="(faq, i) in faqs" :key="i" class="rounded-xl overflow-hidden shadow-sm">
       <button
-        class="w-full flex text-sm justify-between items-center px-6 py-4 hover:bg-infin-secbg cursor-pointer font-semibold"
+        class="w-full flex text-sm justify-between items-center text-infin dark:text-white px-6 py-4 hover:bg-infin-secbg dark:hover:bg-infin-darksecbg cursor-pointer font-semibold"
         @click="toggle(i)"
       >
         {{ faq.q }}
@@ -15,7 +15,10 @@
         </svg>
       </button>
 
-      <div v-show="open === i" class="px-6 py-4 bg-infin-pribg text-sm text-infin-teritiary">
+      <div
+        v-show="open === i"
+        class="px-6 py-4 dark:bg-infin-darkpribg bg-infin-pribg dark:bg-infin-darkpribg text-sm text-infin-teritiary"
+      >
         {{ faq.a }}
       </div>
     </div>

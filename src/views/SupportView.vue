@@ -3,13 +3,13 @@
     <!-- CTA -->
     <section v-reveal="'up'" class="relative container overflow-hidden py-16 border-b">
       <div
-        class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br frominfin/10 via-infin-secbg to-/20"
+        class="pointer-events-none absolute inset-0 -z-10 dark:bg-none bg-gradient-to-br frominfin/10 via-infin-secbg to-/20"
       ></div>
       <div class="mx-auto relative max-w-4xl text-center space-y-6">
-        <h2 class="text-3xl font-bold tracking-tight text-infin md:text-4xl">
+        <h2 class="text-3xl font-bold tracking-tight text-infin dark:text-white md:text-4xl">
           Frequently Asked Questions
         </h2>
-        <p class="text-base text-infin-secondary leading-relaxed">
+        <p class="text-base text-infin-secondary dark:text-gray-400 leading-relaxed">
           Find answers to common questions about our products and services
         </p>
       </div>

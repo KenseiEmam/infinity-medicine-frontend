@@ -10,8 +10,10 @@
     @mouseup="onMouseUp"
     @mousemove="onMouseMove"
   >
-    <div v-for="p in productsList" :key="p.slug" class="product-card group">
-      <div class="h-1/2 bg-infin-secbg w-full flex items-center justify-center overflow-hidden">
+    <div v-for="p in productsList" :key="p.slug" class="product-card dark:bg-infin-darkpribg group">
+      <div
+        class="h-1/2 bg-infin-secbg dark:bg-infin-darksecbg w-full flex items-center justify-center overflow-hidden"
+      >
         <img
           :src="p.photo || ''"
           :alt="p.name"
@@ -20,15 +22,15 @@
       </div>
 
       <div class="text-left mt-2 w-full p-4 flex flex-col h-1/2">
-        <p class="text-infin-teritiary text-xs capitalize">
+        <p class="text-infin-teritiary dark:text-gray-400 text-xs capitalize">
           {{ p.short_description }}
         </p>
 
-        <h3 class="text-xl font-semibold mb-2">
+        <h3 class="text-xl font-semibold mb-2 text-infin dark:text-white">
           {{ p.name }}
         </h3>
 
-        <p class="text-infin-secondary line-clamp-4 mb-4">
+        <p class="text-infin-secondary dark:text-gray-400 line-clamp-4 mb-4">
           {{ p.description }}
         </p>
         <div class="w-full mt-auto space-y-2">

@@ -18,7 +18,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-file-text h-12 w-12 text-infin"
+              class="lucide lucide-file-text h-12 w-12 dark:text-white text-infin"
             >
               <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
               <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -27,22 +27,34 @@
               <path d="M16 17H8"></path>
             </svg>
           </div>
-          <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Complete Your Demo Request</h1>
-          <p class="text-lg text-infin-secondary max-w-2xl mx-auto leading-relaxed">
+          <h1 class="text-infin dark:text-white text-4xl font-bold tracking-tight md:text-5xl">
+            Complete Your Demo Request
+          </h1>
+          <p
+            class="text-lg text-infin-secondary dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
+          >
             Fill out the form below and our team will provide you with detailed information about
             our products and pricing.
           </p>
         </div>
         <div
           data-slot="card"
-          class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-infin-teritiary/30 py-6 shadow-sm"
+          class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-infin-teritiary/30 dark:border-infin/30 py-6 shadow-sm"
         >
           <div
             data-slot="card-header"
             class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
           >
-            <div data-slot="card-title" class="leading-none font-semibold">Contact Information</div>
-            <div data-slot="card-description" class="text-infin-secondary text-sm">
+            <div
+              data-slot="card-title"
+              class="leading-none font-semibold text-infin dark:text-white"
+            >
+              Contact Information
+            </div>
+            <div
+              data-slot="card-description"
+              class="text-infin-secondary dark:text-gray-400 text-sm"
+            >
               Please provide your details so we can prepare a customized quote for your practice.
             </div>
           </div>
@@ -51,12 +63,12 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="space-y-2">
                   <label
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="clinicName"
                     >Clinic Name *</label
                   ><input
                     data-slot="input"
-                    class="file:text-primary placeholder:text-infin-secondary selection:bg-infin selection:text-infin dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                    class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="clinicName"
                     :required="true"
                     placeholder="Enter your clinic name"
@@ -65,12 +77,12 @@
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="contactName"
                     >Contact Name *</label
                   ><input
                     data-slot="input"
-                    class="file:text-primary placeholder:text-infin-secondary selection:bg-infin selection:text-infin dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                    class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="contactName"
                     :required="true"
                     placeholder="Your full name"
@@ -81,12 +93,12 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="space-y-2">
                   <label
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="email"
                     >Email Address *</label
                   ><input
                     data-slot="input"
-                    class="file:text-primary placeholder:text-infin-secondary selection:bg-infin selection:text-infin dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                    class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="email"
                     :required="true"
                     placeholder="you@clinic.com"
@@ -96,12 +108,12 @@
                 </div>
                 <div class="space-y-2">
                   <label
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="phone"
                     >Phone Number *</label
                   ><input
                     data-slot="input"
-                    class="file:text-primary placeholder:text-infin-secondary selection:bg-infin selection:text-infin dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                    class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="phone"
                     :required="true"
                     placeholder="+965 XXXX XXXX"
@@ -112,13 +124,13 @@
               </div>
               <div class="space-y-2">
                 <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   for="country"
                   >Country *</label
                 >
                 <select
                   aria-hidden="true"
-                  class="file:text-primary placeholder:text-infin-secondary selection:bg-infin selection:text-infin dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                  class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                   :required="true"
                   tabindex="-1"
                 >
@@ -136,20 +148,22 @@
               <div class="space-y-4">
                 <div>
                   <label
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >Products of Interest *</label
                   >
-                  <p class="text-sm text-infin-secondary">
+                  <p class="text-sm text-infin-secondary dark:text-gray-400">
                     Select a product from the categories below that you’d like more information
                     about.
                   </p>
                 </div>
 
-                <div class="rounded-xl border border-infin-teritiary/60 bg-infin-pribg/10">
+                <div
+                  class="rounded-xl border border-infin-teritiary/60 dark:bg-infin-darkpribg bg-infin-pribg/10"
+                >
                   <div
                     v-for="(category, index) in accordionCategories"
                     :key="index"
-                    class="border-b border-infin-teritiary/30 last:border-b-0"
+                    class="border-b border-infin-teritiary/30 dark:border-infin/30 last:border-b-0"
                   >
                     <div>
                       <h3 class="flex">
@@ -160,11 +174,13 @@
                         >
                           <div>
                             <p
-                              class="text-sm text-left font-semibold uppercase tracking-[0.25em] text-infin-secondary"
+                              class="text-sm text-left font-semibold uppercase tracking-[0.25em] text-infin-secondary dark:text-gray-400"
                             >
                               {{ category.title }}
                             </p>
-                            <p class="mt-1 text-left text-xs text-infin-secondary">
+                            <p
+                              class="mt-1 text-left text-xs text-infin-secondary dark:text-gray-400"
+                            >
                               {{ category.description }}
                             </p>
                           </div>
@@ -178,7 +194,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-chevron-down text-infin-secondary pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
+                            class="lucide lucide-chevron-down text-infin-secondary dark:text-gray-400 pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
                             :class="{ 'rotate-180': activeAccordion === index }"
                           >
                             <path d="m6 9 6 6 6-6"></path>
@@ -196,9 +212,11 @@
                           type="button"
                           @click="interest = product.slug"
                           :class="
-                            interest === product.slug ? 'bg-infin text-white' : 'bg-background'
+                            interest === product.slug
+                              ? 'bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg dark:text-infin  text-white'
+                              : 'bg-background'
                           "
-                          class="rounded-full border px-4 py-2 text-sm transition-colors border-infin-teritiary hover:border-primary/60 hover:text-primary"
+                          class="rounded-full text-infin-secondary dark:text-gray-400 border px-4 py-2 text-sm transition-colors border-infin-teritiary hover:border-primary/60 hover:text-primary"
                         >
                           {{ product.name }}
                         </button>
@@ -209,11 +227,11 @@
               </div>
               <div class="space-y-2">
                 <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  class="text-sm text-infin dark:text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   for="notes"
                   >Additional Notes</label
                 ><textarea
-                  class="flex min-h-[80px] w-full rounded-md border border-infin-teritiary bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-infin-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infin-teritiary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  class="flex min-h-[80px] w-full rounded-md border border-infin-teritiary bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-infin-secondary dark:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infin-teritiary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   id="notes"
                   placeholder="Tell us about your specific requirements, questions, or any other details..."
                   rows="4"

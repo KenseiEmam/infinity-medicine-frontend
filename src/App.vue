@@ -25,7 +25,10 @@ const isDashboard = computed(() => route.path.startsWith('/dashboard'))
 </script>
 
 <template>
-  <div class="w-full min-h-screen max-w-screen relative bg-infin-secbg">
+  <div
+    id="main"
+    class="w-full min-h-screen max-w-screen relative bg-infin-secbg dark:bg-infin-darksecbg"
+  >
     <div
       class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.06),transparent_60%)]"
     ></div>

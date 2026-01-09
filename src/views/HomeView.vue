@@ -7,18 +7,16 @@
 
         <div class="flex-1 flex flex-col justify-center space-y-6">
           <p
-            class="mb-6 text-sm uppercase tracking-[0.6em] text-infin-secondary dark:text-infin-secondary/60"
+            class="mb-6 text-sm uppercase tracking-[0.6em] text-infin-secondary dark:text-gray-400"
           >
             Partnership &amp; Support
           </p>
           <h1
-            class="font-serif uppercase font-light text-3xl leading-tight text-600 md:text-6xl lg:leading-[1.05]"
+            class="font-serif uppercase font-light text-3xl leading-tight text-infin dark:text-white md:text-6xl lg:leading-[1.05]"
           >
             {{ infos[index].title }}
           </h1>
-          <p
-            class="text-base leading-relaxed text-infin-secondary md:text-lg dark:text-infin-secondary/70"
-          >
+          <p class="text-base leading-relaxed text-infin-secondary dark:text-gray-400 md:text-lg">
             {{ infos[index].text }}
           </p>
 
@@ -110,7 +108,7 @@
         and truly exceptional patient results.
       </p>
     </section>
-    <div v-reveal="'down'" class="w-full bg-infin-pribg">
+    <div v-reveal="'down'" class="w-full dark:bg-infin-darkpribg bg-infin-pribg">
       <section class="container py-16 flex flex-col items-center space-y-6 text-center px-6 py-36">
         <div class="flex justify-center">
           <svg
@@ -123,7 +121,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-award h-12 w-12 text-primary"
+            class="lucide lucide-award h-12 w-12 text-infin dark:text-white"
           >
             <path
               d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
@@ -131,8 +129,10 @@
             <circle cx="12" cy="8" r="6"></circle>
           </svg>
         </div>
-        <p class="max-w-140 text-xl md:text-4xl mb-4 font-bold">ISO Certified Excellence</p>
-        <p class="max-w-3xl text-xl text-gray-700">
+        <p class="max-w-140 text-xl md:text-4xl mb-4 font-bold text-infin dark:text-white">
+          ISO Certified Excellence
+        </p>
+        <p class="max-w-3xl text-xl text-infin-secondary dark:text-gray-400">
           All Infinity Medicals devices meet rigorous international quality and safety standards,
           ensuring compliance with global medical device regulations.
         </p>

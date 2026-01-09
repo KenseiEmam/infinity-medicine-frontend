@@ -3,32 +3,36 @@
     <!-- HERO -->
     <section
       v-reveal="'up'"
-      class="relative overflow-hidden border-b border-infin-teritiary/30 bg-infin-secbg/95"
+      class="relative overflow-hidden border-b border-infin-teritiary/30 dark:border-infin/30 dark:bg-infin-darksecbg/95 bg-infin-secbg/95"
     >
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
       ></div>
       <div
-        class="absolute inset-0 bg-gradient-to-b from-infin-secbg via-transparent to-infin-secbg"
+        class="absolute inset-0 bg-gradient-to-b dark:bg-infin dark:bg-none from-infin-secbg via-transparent to-infin-secbg"
       ></div>
       <div class="container relative py-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <div v-reveal="'left'" class="lg:col-span-7 space-y-8">
             <div class="space-y-4">
               <div
-                class="inline-flex items-center rounded-full border border-infin/20 bg-infin/5 px-3 py-1 text-xs font-medium text-infin uppercase tracking-wider"
+                class="inline-flex items-center rounded-full border border-infin/20 bg-infin/5 px-3 py-1 text-xs font-medium text-infin dark:text-white uppercase tracking-wider"
               >
                 Medical Aesthetic Device
               </div>
-              <h1 class="text-5xl font-bold tracking-tight text-infin md:text-6xl lg:text-7xl">
+              <h1
+                class="text-5xl font-bold tracking-tight text-infin dark:text-white md:text-6xl lg:text-7xl"
+              >
                 {{ productStore.activeProduct.name }}
               </h1>
-              <p class="text-xl font-medium text-infin/90 md:text-2xl tracking-tight">
+              <p
+                class="text-xl font-medium text-infin/90 dark:text-white/90 md:text-2xl tracking-tight"
+              >
                 {{ productStore.activeProduct.short_description }}
               </p>
             </div>
             <p
-              class="text-lg text-infin-secondary leading-relaxed max-w-2xl border-l-2 border-infin/20 pl-6"
+              class="text-lg text-infin-secondary dark:text-gray-400 leading-relaxed max-w-2xl border-l-2 border-infin/20 dark:border-white/20 pl-6"
             >
               {{ productStore.activeProduct.description }}
             </p>
@@ -44,33 +48,33 @@
             >
               <div>
                 <div
-                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary mb-1"
+                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary dark:text-gray-400 mb-1"
                 >
                   Type
                 </div>
-                <div class="font-medium">Medical Grade</div>
+                <div class="font-medium text-infin dark:text-white">Medical Grade</div>
               </div>
               <div>
                 <div
-                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary mb-1"
+                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary dark:text-gray-400 mb-1"
                 >
                   Support
                 </div>
-                <div class="font-medium">24/7 Technical</div>
+                <div class="font-medium text-infin dark:text-white">24/7 Technical</div>
               </div>
               <div>
                 <div
-                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary mb-1"
+                  class="text-xs font-semibold uppercase tracking-wider text-infin-secondary dark:text-gray-400 mb-1"
                 >
                   Warranty
                 </div>
-                <div class="font-medium">Comprehensive</div>
+                <div class="font-medium text-infin dark:text-white">Comprehensive</div>
               </div>
             </div>
           </div>
           <div v-reveal="'right'" class="lg:col-span-5 relative">
             <div
-              class="relative aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden border border-infin-teritiary/50 bg-infin-pribg/20 shadow-2xl"
+              class="relative aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden border border-infin-teritiary/50 dark:bg-infin-darkpribg bg-infin-pribg/20 shadow-2xl"
             >
               <div
                 class="absolute top-0 left-0 h-16 w-16 border-t-2 border-l-2 border-infin/20 rounded-tl-3xl"
@@ -90,7 +94,7 @@
                 :src="productStore.activeProduct.photo"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-infin-secbg/20 to-transparent pointer-events-none"
+                class="absolute inset-0 bg-gradient-to-t dark:from-infin-darksecbg/20 from-infin-secbg/20 to-transparent pointer-events-none"
               ></div>
             </div>
             <div
@@ -105,14 +109,16 @@
     <section
       v-reveal="'down'"
       v-if="productStore.activeProduct.keyFeatures"
-      class="py-24 bg-infin-pribg/20"
+      class="py-24 dark:bg-infin-darkpribg bg-infin-pribg/20"
     >
       <div class="container px-4 md:px-6 max-w-7xl">
         <div class="flex flex-col items-start space-y-4 mb-12 md:mb-16 max-w-3xl">
-          <h2 class="text-3xl font-bold tracking-tight text-infin sm:text-4xl">Key Features</h2>
+          <h2 class="text-3xl font-bold tracking-tight text-infin dark:text-white sm:text-4xl">
+            Key Features
+          </h2>
         </div>
         <div
-          class="rounded-3xl border border-infin-teritiary/50 bg-infin-secbg shadow-sm overflow-hidden"
+          class="rounded-3xl border border-infin-teritiary/50 bg-infin-secbg dark:bg-infin-darksecbg shadow-sm overflow-hidden"
         >
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 lg:divide-y-0 divide-infin-teritiary/50"
@@ -124,16 +130,16 @@
             >
               <div class="flex flex-col h-full">
                 <div
-                  class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg border border-infin-teritiary/50 bg-infin-pribg text-infin transition-colors group-hover:border-infin/20 group-hover:bg-infin/10 group-hover:text-infin"
+                  class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg border border-infin-teritiary/50 dark:bg-infin-darkpribg bg-infin-pribg dark:bg-infin-darkpribg text-infin dark:text-white transition-colors group-hover:border-infin/20 group-hover:bg-infin/10 group-hover:text-infin dark:hover:text-white"
                 >
                   <div v-html="feature.icon" class="h-5 w-5 text-current" />
                 </div>
                 <h3
-                  class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-infin-secondary transition-colors group-hover:text-infin"
+                  class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-infin-secondary dark:text-gray-400 transition-colors group-hover:text-infin dark:hover:text-white"
                 >
                   {{ feature.title }}
                 </h3>
-                <p class="text-sm text-infin-secondary leading-relaxed">
+                <p class="text-sm text-infin-secondary dark:text-gray-400 leading-relaxed">
                   {{ feature.description }}
                 </p>
               </div>
@@ -150,8 +156,10 @@
     >
       <div class="mx-auto max-w-4xl space-y-8">
         <div class="text-center space-y-4">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Key Ingredients</h2>
-          <p class="text-infin-secondary leading-relaxed">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+            Key Ingredients
+          </h2>
+          <p class="text-infin-secondary dark:text-gray-400 leading-relaxed">
             {{ productStore.activeProduct.keyIngredients.description }}
           </p>
         </div>
@@ -165,7 +173,7 @@
               productStore.activeProduct.keyIngredients.ingredients.length - 1,
             )"
             :key="ingredient.name"
-            class="bg-infin-secbg text-infin flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 shadow-sm"
+            class="bg-infin-secbg dark:bg-infin-darksecbg text-infin dark:text-white flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 dark:border-infin/30 shadow-sm"
           >
             <div class="p-6 space-y-2">
               <h3 class="text-lg font-semibold">{{ ingredient.name }}</h3>
@@ -174,7 +182,7 @@
           </div>
           <div
             data-slot="card"
-            class="bg-infin-secbg text-infin flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 shadow-sm md:col-span-2"
+            class="bg-infin-secbg dark:bg-infin-darksecbg text-infin dark:text-white flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 dark:border-infin/30 shadow-sm md:col-span-2"
           >
             <div
               v-if="
@@ -212,9 +220,13 @@
     >
       <div class="max-w-4xl mx-auto space-y-8">
         <div class="text-center space-y-4">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Technical Specifications</h2>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+            Technical Specifications
+          </h2>
         </div>
-        <div class="rounded-2xl border border-infin-teritiary/60 bg-infin-secbg/90 shadow-sm">
+        <div
+          class="rounded-2xl border border-infin-teritiary/60 bg-infin-secbg/90 dark:bg-infin-darksecbg/90 shadow-sm"
+        >
           <dl class="divide-y divide-infin-teritiary/60">
             <div
               v-for="(value, key, index) in productStore.activeProduct.technicalSpecifications"
@@ -222,11 +234,11 @@
               class="flex flex-col gap-2 p-6 md:flex-row md:items-baseline md:gap-6"
             >
               <dt
-                class="text-xs font-semibold uppercase tracking-[0.3em] text-infin-secondary md:w-48"
+                class="text-xs font-semibold uppercase tracking-[0.3em] text-infin-secondary dark:text-gray-400 md:w-48"
               >
                 {{ key }}
               </dt>
-              <dd class="text-base font-medium text-infin md:text-lg">
+              <dd class="text-base font-medium text-infin dark:text-white md:text-lg">
                 {{ value }}
               </dd>
             </div>
@@ -243,7 +255,9 @@
       <div class="container">
         <div class="max-w-3xl mx-auto">
           <div class="text-center space-y-4 mb-12">
-            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Clinical Benefits</h2>
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+              Clinical Benefits
+            </h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div
@@ -252,7 +266,7 @@
               class="flex items-start gap-3"
             >
               <div
-                class="flex-shrink-0 w-5 h-5 rounded-full bg-infin/10 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-5 h-5 rounded-full bg-infin/10 dark:bg-white/10 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -264,12 +278,12 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="lucide lucide-check h-3 w-3 text-infin"
+                  class="lucide lucide-check h-3 w-3 dark:text-white text-infin"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
               </div>
-              <p class="text-sm leading-relaxed">
+              <p class="text-sm text-infin dark:text-white leading-relaxed">
                 {{ benefit }}
               </p>
             </div>
@@ -281,15 +295,17 @@
     <section
       v-reveal="'right'"
       v-if="productStore.activeProduct.treatmentIndications"
-      class="py-16 md:py-24 bg-infin-pribg/30"
+      class="py-16 md:py-24 dark:bg-infin-darkpribg bg-infin-pribg/30"
     >
       <div class="container">
         <div class="text-center space-y-4 mb-12">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Treatment Indications</h2>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+            Treatment Indications
+          </h2>
         </div>
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 shadow-sm max-w-4xl mx-auto"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 border-infin-teritiary/30 dark:border-infin/30 shadow-sm max-w-4xl mx-auto"
         >
           <div data-slot="card-content" class="p-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -297,9 +313,11 @@
                 v-for="(indication, index) in productStore.activeProduct.treatmentIndications
                   .indications"
                 :key="index"
-                class="flex items-center gap-3 p-3 rounded-lg bg-infin-pribg/70"
+                class="flex items-center gap-3 p-3 rounded-lg dark:bg-infin-darkpribg bg-infin-pribg/70"
               >
-                <div class="w-2 h-2 rounded-full bg-infin flex-shrink-0"></div>
+                <div
+                  class="w-2 h-2 rounded-full bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg flex-shrink-0"
+                ></div>
                 <p class="text-sm font-medium">{{ indication }}</p>
               </div>
             </div>
@@ -311,11 +329,13 @@
     <section
       v-reveal="'down'"
       v-if="productStore.activeProduct.application"
-      class="py-16 container md:py-24 border-t border-infin-teritiary/30"
+      class="py-16 container md:py-24 border-t border-infin-teritiary/30 dark:border-infin/30"
     >
       <div class="max-w-3xl mx-auto text-center space-y-6">
-        <h2 class="text-3xl font-bold tracking-tight md:text-4xl">How to Use</h2>
-        <p class="text-infin-secondary leading-relaxed">
+        <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+          How to Use
+        </h2>
+        <p class="text-infin-secondary dark:text-gray-400 leading-relaxed">
           {{ productStore.activeProduct.application }}
         </p>
       </div>
@@ -332,7 +352,9 @@
     />
   </div>
   <div v-else class="container py-16 flex items-center justify-center" id="ourproducts">
-    <p class="flex items-center text-center text-infin">No Product with this ID exists!</p>
+    <p class="flex items-center text-center dark:text-white text-infin">
+      No Product with this ID exists!
+    </p>
   </div>
 </template>
 

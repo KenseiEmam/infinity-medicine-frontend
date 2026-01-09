@@ -15,7 +15,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-calendar-check h-12 w-12 text-primary"
+              class="lucide lucide-calendar-check h-12 w-12 text-infin dark:text-white"
             >
               <path d="M8 2v4"></path>
               <path d="M16 2v4"></path>
@@ -24,22 +24,29 @@
               <path d="m9 16 2 2 4-4"></path>
             </svg>
           </div>
-          <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Book a Demo</h1>
-          <p class="text-lg text-infin-secondary max-w-2xl mx-auto leading-relaxed">
+          <h1 class="text-infin dark:text-white text-4xl font-bold tracking-tight md:text-5xl">
+            Book a Demo
+          </h1>
+          <p
+            class="text-lg text-infin-secondary dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
+          >
             Select your preferred date and we'll contact you to schedule a personalized
             demonstration of our medical devices.
           </p>
         </div>
         <div
           data-slot="card"
-          class="bg-card text-infin flex flex-col gap-6 rounded-xl border py-6 shadow-sm max-w-2xl mx-auto"
+          class="bg-card text-infin dark:text-white flex flex-col gap-6 rounded-xl border py-6 shadow-sm max-w-2xl mx-auto"
         >
           <div
             data-slot="card-header"
             class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
           >
             <div data-slot="card-title" class="leading-none font-semibold">Select a Date</div>
-            <div data-slot="card-description" class="text-infin-secondary text-sm">
+            <div
+              data-slot="card-description"
+              class="text-infin-secondary dark:text-gray-400 text-sm"
+            >
               Choose one day for your demo appointment. Our team will reach out to confirm the exact
               time.
             </div>

@@ -35,33 +35,28 @@ const router = createRouter({
     {
       name: 'ophthalmology',
       path: '/ophthalmology',
-      component:OphthalmologyView
-
+      component: OphthalmologyView,
     },
     {
       name: 'dermatology',
       path: '/dermatology',
-      component: DermatologyView
-
+      component: DermatologyView,
     },
     {
       name: 'quote',
       path: '/quote',
-      component: QuoteView
-
+      component: QuoteView,
     },
 
     {
       name: 'demo',
       path: '/demo',
-      component: DemoView
-
+      component: DemoView,
     },
     {
       name: 'product',
       path: '/products/:slug',
-      component: ProductView
-
+      component: ProductView,
     },
   ],
   scrollBehavior(to) {
@@ -78,6 +73,5 @@ const router = createRouter({
     }
   },
 })
-
 
 export default router

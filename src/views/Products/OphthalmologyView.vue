@@ -3,10 +3,10 @@
     <!-- HERO -->
     <section
       v-reveal="'up'"
-      class="relative overflow-hidden border-b border-infin-teritiary/30 bg-background py-16 md:py-24"
+      class="relative overflow-hidden border-b border-infin-teritiary/30 dark:border-infin/30 bg-background py-16 md:py-24"
     >
       <div
-        class="absolute inset-0 bg-gradient-to-b from-infin/5 via-background to-background"
+        class="absolute inset-0 bg-gradient-to-b dark:bg-infin dark:bg-none from-infin/5 via-background to-background"
       ></div>
       <div
         class="absolute inset-y-0 left-1/2 hidden w-[60rem] -translate-x-1/2 rounded-full bg-infin/5 blur-3xl md:block"
@@ -15,13 +15,13 @@
         <div class="mx-auto max-w-4xl space-y-6 text-center">
           <span
             data-slot="badge"
-            class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 mx-auto w-fit uppercase tracking-wider"
+            class="inline-flex text-infin dark:text-white items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 mx-auto w-fit uppercase tracking-wider"
             >Ophthalmology Department</span
           >
-          <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+          <h1 class="text-infin dark:text-white text-4xl font-bold tracking-tight md:text-5xl">
             Ophthalmic Devices for Precision-Driven Care
           </h1>
-          <p class="text-lg text-infin-secondary leading-relaxed">
+          <p class="text-lg text-infin-secondary dark:text-gray-400 leading-relaxed">
             Precision-engineered imaging, diagnostics, and periocular therapeutics curated for
             practices that demand clinical certainty and elevated patient experiences.
           </p>
@@ -36,7 +36,7 @@
             ><a
               href="#diagnostic-equipment"
               data-slot="button"
-              class="linktext text-xs text-infin hover:font-semibold"
+              class="linktext text-xs text-infin dark:text-white hover:font-semibold"
               >Explore Diagnostic Equipment</a
             >
           </div>
@@ -47,10 +47,10 @@
     <!-- elevate -->
     <section v-reveal="'down'" class="py-16 container md:py-24">
       <div class="max-w-3xl mx-auto space-y-6 text-center">
-        <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
           Ready to Elevate Your Ophthalmic Practice?
         </h2>
-        <p class="text-lg text-infin-secondary leading-relaxed">
+        <p class="text-lg text-infin-secondary dark:text-gray-400 leading-relaxed">
           Partner with Infinity Medicals for tailored device selection, regulatory guidance, and
           continuous clinical support that keeps you on the leading edge of vision care.
         </p>
@@ -58,14 +58,17 @@
       </div>
     </section>
     <!--  VISION -->
-    <section v-reveal="'left'" class="relative bg-infin-pribg/20 py-16 md:py-24">
+    <section
+      v-reveal="'left'"
+      class="relative dark:bg-infin-darkpribg bg-infin-pribg/20 py-16 md:py-24"
+    >
       <div
-        class="absolute inset-0 bg-gradient-to-b from-background via-infin-pribg/20 to-background"
+        class="absolute inset-0 bg-gradient-to-b dark:bg-infin dark:bg-none from-background via-infin-pribg/20 to-background"
       ></div>
       <div class="container relative space-y-10">
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
           id="diagnostic-equipment"
         >
           <div
@@ -76,7 +79,7 @@
           </div>
           <div
             data-slot="card-content"
-            class="px-6 space-y-4 text-sm text-infin-secondary leading-relaxed"
+            class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
             <p>
               OCT, topography, and imaging systems that deliver precise diagnostics to guide
@@ -87,9 +90,9 @@
                 v-for="eq in equipment"
                 :key="eq.slug"
                 data-slot="card"
-                class="text-infin-secondary gap-6 rounded-xl py-6 flex h-full flex-col overflow-hidden border border-infin-teritiary/30 bg-infin-secbg shadow-sm transition-shadow hover:shadow-md"
+                class="text-infin-secondary dark:text-gray-400 gap-6 rounded-xl py-6 flex h-full flex-col overflow-hidden border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg dark:bg-infin-darksecbg shadow-sm transition-shadow hover:shadow-md"
               >
-                <div class="aspect-square bg-infin-secbg">
+                <div class="aspect-square bg-infin-secbg dark:bg-infin-darksecbg">
                   <img :alt="eq.name" class="h-full w-full object-cover max-h-64" :src="eq.photo" />
                 </div>
                 <div
@@ -98,7 +101,9 @@
                 >
                   <div class="space-y-2">
                     <h3 class="text-base font-semibold">{{ eq.name }}</h3>
-                    <p class="text-xs text-infin-secondary line-clamp-4 leading-relaxed md:text-sm">
+                    <p
+                      class="text-xs text-infin-secondary dark:text-gray-400 line-clamp-4 leading-relaxed md:text-sm"
+                    >
                       {{ eq.description }}
                     </p>
                   </div>
@@ -112,7 +117,7 @@
         </div>
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
           id="refractive-machines"
         >
           <div
@@ -123,7 +128,7 @@
           </div>
           <div
             data-slot="card-content"
-            class="px-6 space-y-4 text-sm text-infin-secondary leading-relaxed"
+            class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
             <p>
               Cutting-edge refractive platforms that support accurate measurements for cataract,
@@ -171,7 +176,7 @@
         </div>
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
           id="plasma-treatment-devices"
         >
           <div
@@ -184,7 +189,7 @@
           </div>
           <div
             data-slot="card-content"
-            class="px-6 space-y-4 text-sm text-infin-secondary leading-relaxed"
+            class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
             <p>
               Plasma-based technology for non-invasive eyelid and periocular rejuvenation with
@@ -218,7 +223,7 @@
         </div>
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
           id="surgical-instruments"
         >
           <div
@@ -229,7 +234,7 @@
           </div>
           <div
             data-slot="card-content"
-            class="px-6 space-y-4 text-sm text-infin-secondary leading-relaxed"
+            class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
             <p>
               Curated sets of microsurgical tools designed for ophthalmic precision, durability, and
@@ -277,7 +282,7 @@
         </div>
         <div
           data-slot="card"
-          class="bg-infin-secbg text-infin-secondary flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
+          class="bg-infin-secbg dark:bg-infin-darksecbg text-infin-secondary dark:text-gray-400 flex flex-col gap-6 rounded-xl border py-6 shadow-sm scroll-mt-32"
           id="surgical-disposables"
         >
           <div
@@ -288,7 +293,7 @@
           </div>
           <div
             data-slot="card-content"
-            class="px-6 space-y-4 text-sm text-infin-secondary leading-relaxed"
+            class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
             <p>
               Reliable single-use consumables that maintain sterile environments and streamline

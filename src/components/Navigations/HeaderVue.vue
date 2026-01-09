@@ -1,10 +1,14 @@
 <template>
-  <header class="sticky w-full top-0 z-50 border-b blurred-bg translate-y-0 opacity-100">
+  <header
+    class="sticky w-full top-0 z-50 border-b blurred-bg dark:bg-infin/40 translate-y-0 opacity-100"
+  >
     <div class="container md:px-6 max-w-7xl relative mx-auto flex items-center h-20">
       <!-- Logo -->
       <div class="w-64 flex items-center">
         <div class="flex items-center gap-2">
-          <span class="text-lg font-bold tracking-extra-trackinge">INFINITY MEDICALS</span>
+          <span class="text-lg font-bold tracking-extra-trackinge text-infin dark:text-white"
+            >INFINITY MEDICALS</span
+          >
         </div>
       </div>
       <button class="flex md:hidden ml-auto" @click="mobileOpen = !mobileOpen">
@@ -23,18 +27,18 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium justify-center">
         <RouterLink
           to="/"
-          class="hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+          class="hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >HOME</RouterLink
         >
 
         <RouterLink
           to="/about"
-          class="hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+          class="hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >ABOUT</RouterLink
         >
         <RouterLink
           to="/locations"
-          class="hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+          class="hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >LOCATIONS</RouterLink
         >
         <!-- DERMATOLOGY -->
@@ -45,7 +49,7 @@
         >
           <RouterLink
             :to="{ name: 'dermatology' }"
-            class="flex items-center gap-1 hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+            class="flex items-center gap-1 hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >
             DERMATOLOGY
             <svg
@@ -61,12 +65,14 @@
 
           <div
             v-show="showCategories"
-            class="absolute top-full w-64 -left-20 rounded-lg mx-auto backdrop-blur-md bg-infin-secbg shadow-xl border border-infin-teritiary/40 p-4 z-50"
+            class="absolute top-full w-64 -left-20 rounded-lg mx-auto backdrop-blur-md bg-infin-secbg dark:bg-infin-darksecbg shadow-xl border border-infin-teritiary/40 p-4 z-50"
           >
             <div class="space-y-4 text-sm">
               <div>
                 <RouterLink to="/dermatology#trichology">
-                  <p class="text-xs font-semibold extra-tracking text-infin-teritiary mb-2">
+                  <p
+                    class="text-xs font-semibold extra-tracking text-infin-teritiary dark:text-gray-400 mb-2"
+                  >
                     PRODUCTS
                   </p>
                 </RouterLink>
@@ -75,7 +81,7 @@
                   v-for="item in dermprod"
                   :key="item.to"
                   :to="item.to"
-                  class="block text-infin-secondary py-1 px-2 rounded-lg hover:bg-zinc-300 transition"
+                  class="block text-infin-secondary dark:text-gray-400 py-1 px-2 rounded-lg hover:bg-zinc-300 transition"
                 >
                   {{ item.label }}
                 </RouterLink>
@@ -83,7 +89,9 @@
 
               <div>
                 <RouterLink to="/dermatology#equipment">
-                  <p class="text-xs font-semibold extra-tracking text-infin-teritiary mb-2">
+                  <p
+                    class="text-xs font-semibold extra-tracking text-infin-teritiary dark:text-gray-400 mb-2"
+                  >
                     EQUIPMENT
                   </p>
                 </RouterLink>
@@ -92,7 +100,7 @@
                   v-for="item in dermeq"
                   :key="item.to"
                   :to="item.to"
-                  class="block text-infin-secondary py-1 rounded hover:bg-gray-300 px-2 transition"
+                  class="block text-infin-secondary dark:text-gray-400 py-1 rounded hover:bg-gray-300 px-2 transition"
                 >
                   {{ item.label }}
                 </RouterLink>
@@ -108,7 +116,7 @@
         >
           <router-link
             :to="{ name: 'ophthalmology' }"
-            class="flex items-center gap-1 hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+            class="flex items-center gap-1 hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >
             OPTHALMOLOGY
             <svg
@@ -124,7 +132,7 @@
 
           <div
             v-show="showCategories2"
-            class="absolute top-full w-64 -left-20 rounded-lg mx-auto backdrop-blur-md bg-infin-secbg shadow-xl border border-infin-teritiary/40 p-4 z-50"
+            class="absolute top-full w-64 -left-20 rounded-lg mx-auto backdrop-blur-md bg-infin-secbg dark:bg-infin-darksecbg shadow-xl border border-infin-teritiary/40 p-4 z-50"
           >
             <div class="space-y-4 text-sm">
               <div>
@@ -132,7 +140,7 @@
                   v-for="item in oph"
                   :key="item.to"
                   :to="item.to"
-                  class="block text-infin-secondary py-1 px-2 rounded-lg hover:bg-zinc-300 transition"
+                  class="block text-infin-secondary dark:text-gray-400 py-1 px-2 rounded-lg hover:bg-zinc-300 transition"
                 >
                   {{ item.label }}
                 </RouterLink>
@@ -142,10 +150,32 @@
         </div>
         <RouterLink
           to="/support"
-          class="hover:text-infin text-infin-secondary uppercase transition active:text-infin"
+          class="hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase transition active:text-infin dark:active:text-white"
           >SUPPORT</RouterLink
         >
       </nav>
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 ml-auto justify-end">
+        <button
+          class="p-2 rounded-full bg-white dark:bg-gray-800 text-infin-secondary cursor-pointer dark:text-gray-400 transition-colors"
+          @click="toggleDark"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v1m0 16v1m8.485-8.485h1M3.515 12.515h1M18.364 5.636l.707.707M5.636 18.364l.707.707M18.364 18.364l.707-.707M5.636 5.636l.707-.707M12 5a7 7 0 000 14 7 7 0 000-14z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -153,18 +183,18 @@
       <nav class="flex flex-col gap-4">
         <RouterLink
           to="/"
-          class="text-lg font-medium hover:text-infin text-infin-secondary uppercase"
+          class="text-lg font-medium hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase"
           >HOME</RouterLink
         >
 
         <RouterLink
           to="/about"
-          class="text-lg font-medium hover:text-infin text-infin-secondary uppercase"
+          class="text-lg font-medium hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase"
           >ABOUT</RouterLink
         >
         <RouterLink
           to="/locations"
-          class="text-lg font-medium hover:text-infin text-infin-secondary uppercase"
+          class="text-lg font-medium hover:text-infin dark:hover:text-white text-infin-secondary dark:text-gray-400 uppercase"
           >Locations</RouterLink
         >
         <details class="border-t pt-4">
@@ -223,15 +253,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const showCategories = ref(false)
 const showCategories2 = ref(false)
 const mobileOpen = ref(false)
 
-// const toggleDark = (): void => {
-//   document.documentElement.classList.toggle('dark')
-// }
+const toggleDark = (): void => {
+  const darkmode = localStorage.getItem('darkmode')
+  if (document.getElementById('main')) {
+    document.getElementById('main')?.classList.toggle('dark')
+    if (darkmode === 'true') {
+      localStorage.setItem('darkmode', 'false')
+    } else {
+      localStorage.setItem('darkmode', 'true')
+    }
+  }
+}
+
+onMounted(() => {
+  const darkmode = localStorage.getItem('darkmode')
+  if (darkmode === 'true') {
+    document.getElementById('main')?.classList.add('dark')
+  } else {
+    document.getElementById('main')?.classList.remove('dark')
+  }
+})
 
 const dermeq = [
   { label: 'Lavieen', to: '/products/lavieen' },
@@ -256,5 +303,8 @@ const oph = [
 <style scoped>
 .router-link-active {
   color: #121c26;
+}
+.dark .router-link-active {
+  color: #ffffff;
 }
 </style>

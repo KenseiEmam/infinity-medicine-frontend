@@ -1,17 +1,17 @@
 <template>
-  <div class="flex-1 flex flex-col gap-4 relative">
+  <div class="flex-1 flex flex-col space-y-4 relative">
     <div
       class="absolute w-full top-0 left-0 right-0 bottom-0 bg-[radial-gradient(circle_at_top,rgba(15,23,42,0.04)_0%,transparent_60%)] dark:bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.06)_0%,transparent_60%)]"
     ></div>
     <div
-      class="relative bg-infin-secbg/80 overflow-hidden rounded-3xl border border-gray-200 p-6 shadow-sm"
+      class="relative bg-infin-secbg/80 dark:bg-infin-darksecbg/80 overflow-hidden rounded-3xl border border-gray-200 p-6 shadow-sm"
     >
       <div class="mt-4 grid grid-cols-4 md:grid-cols-8 gap-4 md:gap-6">
         <button
           v-for="(info, i) in infos"
           :key="i"
           type="button"
-          class="letter-btn group relative flex flex-col items-center gap-2 px-2 py-3 text-gray-400 hover:text-gray-900"
+          class="letter-btn group relative flex flex-col items-center gap-2 px-2 py-3 text-gray-400 hover:text-gray-900 dark:text-infin-secondary dark:hover:text-gray-200"
           :class="{ active: index === i }"
           @mouseenter="select(i)"
           @click="select(i)"
@@ -27,21 +27,21 @@
     </div>
     <div
       v-if="current"
-      class="relative bg-infin-secbg/80 rounded-3xl border border-gray-200 p-8 shadow-lg"
+      class="relative bg-infin-secbg/80 dark:bg-infin-darksecbg/80 rounded-3xl border border-gray-200 p-8 shadow-lg"
     >
       <div class="flex items-start content-start gap-4">
         <div>
           <div
-            class="flex my-auto h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 text-white"
+            class="flex my-auto h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 dark:bg-gray-400 text-white dark:text-infin"
           >
             <span class="font-serif text-2xl">{{ current.letter }}</span>
           </div>
         </div>
         <div class="space-y-3">
-          <p class="text-xs uppercase tracking-[0.4em] text-gray-500">
+          <p class="text-xs uppercase tracking-[0.4em] text-infin-teritiary">
             {{ current.title }}
           </p>
-          <p class="text-sm md:text-base text-gray-700">
+          <p class="text-sm md:text-base text-infin-secondary dark:text-gray-400">
             {{ current.text }}
           </p>
         </div>
