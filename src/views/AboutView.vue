@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <!-- HERO -->
-    <section class="relative overflow-hidden">
+    <section v-reveal="'up'" class="relative overflow-hidden">
       <div
         class="pointer-events-none absolute inset-0 bg-gradient-to-br from-infin-pribg/10 via-infin-secbg/30 to-infin-pribg/30"
       ></div>
@@ -74,7 +74,7 @@
       </div>
     </section>
     <!-- INSIGHTS -->
-    <section class="py-20">
+    <section v-reveal="'down'" class="py-20">
       <div class="container grid gap-8 md:grid-cols-2">
         <div
           data-slot="card"
@@ -105,7 +105,7 @@
       </div>
     </section>
     <!-- PRINCIPLES -->
-    <section class="relative overflow-hidden py-16">
+    <section v-reveal="'left'" class="relative overflow-hidden py-16">
       <div
         class="pointer-events-none absolute inset-0 bg-gradient-to-b from-infin-secbg/50 via-infin-pribg to-infin-secbg/40"
       ></div>
@@ -272,7 +272,7 @@
       </div>
     </section>
     <!-- MISSION VISION -->
-    <section class="py-20">
+    <section v-reveal="'right'" class="py-20">
       <div class="container grid gap-10 lg:grid-cols-2">
         <div
           data-slot="card"
@@ -350,7 +350,7 @@
     </section>
 
     <!-- ROADMAP -->
-    <section class="relative container py-20">
+    <section v-reveal="'left'" class="relative container py-20">
       <div
         class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-infin-secbg via-/30 to-infin-secbg"
       ></div>
@@ -473,7 +473,7 @@
       </div>
     </section>
     <!-- PARTNERS -->
-    <section class="py-16 bg-infin-pribg">
+    <section v-reveal="'right'" class="py-16 bg-infin-pribg">
       <div class="container space-y-8">
         <div class="text-center space-y-4">
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Our Partners</h2>
@@ -514,7 +514,7 @@
       </div>
     </section>
     <!-- CTA -->
-    <section class="relative container overflow-hidden py-16">
+    <section v-reveal="'down'" class="relative container overflow-hidden py-16">
       <div
         class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br frominfin/10 via-infin-secbg to-/20"
       ></div>
@@ -536,4 +536,24 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
+</script>

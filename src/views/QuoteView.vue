@@ -4,7 +4,7 @@
     class="relative"
   >
     <!-- HERO -->
-    <main class="py-12 container md:py-20">
+    <main v-reveal="'down'" class="py-12 container md:py-20">
       <div class="mx-auto max-w-4xl">
         <div class="text-center space-y-4 mb-12">
           <div class="flex justify-center">
@@ -263,7 +263,25 @@ const activeAccordion = ref<number | null>(null)
 const toggleAccordion = (index: number) => {
   activeAccordion.value = activeAccordion.value === index ? null : index
 }
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
 // Group products into categories
 const accordionCategories = computed(() => [
   {

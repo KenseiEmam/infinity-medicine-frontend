@@ -1,7 +1,10 @@
 <template>
   <div v-if="!loading && productStore.activeProduct" class="relative">
     <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-infin-teritiary/30 bg-infin-secbg/95">
+    <section
+      v-reveal="'up'"
+      class="relative overflow-hidden border-b border-infin-teritiary/30 bg-infin-secbg/95"
+    >
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
       ></div>
@@ -10,7 +13,7 @@
       ></div>
       <div class="container relative py-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          <div class="lg:col-span-7 space-y-8">
+          <div v-reveal="'left'" class="lg:col-span-7 space-y-8">
             <div class="space-y-4">
               <div
                 class="inline-flex items-center rounded-full border border-infin/20 bg-infin/5 px-3 py-1 text-xs font-medium text-infin uppercase tracking-wider"
@@ -65,7 +68,7 @@
               </div>
             </div>
           </div>
-          <div class="lg:col-span-5 relative">
+          <div v-reveal="'right'" class="lg:col-span-5 relative">
             <div
               class="relative aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden border border-infin-teritiary/50 bg-infin-pribg/20 shadow-2xl"
             >
@@ -99,7 +102,11 @@
     </section>
 
     <!-- Key Features -->
-    <section v-if="productStore.activeProduct.keyFeatures" class="py-24 bg-infin-pribg/20">
+    <section
+      v-reveal="'down'"
+      v-if="productStore.activeProduct.keyFeatures"
+      class="py-24 bg-infin-pribg/20"
+    >
       <div class="container px-4 md:px-6 max-w-7xl">
         <div class="flex flex-col items-start space-y-4 mb-12 md:mb-16 max-w-3xl">
           <h2 class="text-3xl font-bold tracking-tight text-infin sm:text-4xl">Key Features</h2>
@@ -136,7 +143,11 @@
       </div>
     </section>
     <!-- Key Ingredients -->
-    <section v-if="productStore.activeProduct.keyIngredients" class="container py-16 md:py-24">
+    <section
+      v-reveal="'left'"
+      v-if="productStore.activeProduct.keyIngredients"
+      class="container py-16 md:py-24"
+    >
       <div class="mx-auto max-w-4xl space-y-8">
         <div class="text-center space-y-4">
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Key Ingredients</h2>
@@ -195,6 +206,7 @@
     </section>
     <!-- Technical Specs -->
     <section
+      v-reveal="'right'"
       v-if="productStore.activeProduct.technicalSpecifications"
       class="container py-16 md:py-24"
     >
@@ -223,7 +235,11 @@
       </div>
     </section>
     <!-- Clinical Benefits -->
-    <section v-if="productStore.activeProduct.clinicalBenefits" class="py-16 md:py-24">
+    <section
+      v-reveal="'left'"
+      v-if="productStore.activeProduct.clinicalBenefits"
+      class="py-16 md:py-24"
+    >
       <div class="container">
         <div class="max-w-3xl mx-auto">
           <div class="text-center space-y-4 mb-12">
@@ -263,6 +279,7 @@
     </section>
     <!-- Treatment Indications -->
     <section
+      v-reveal="'right'"
       v-if="productStore.activeProduct.treatmentIndications"
       class="py-16 md:py-24 bg-infin-pribg/30"
     >
@@ -292,6 +309,7 @@
     </section>
     <!-- Application -->
     <section
+      v-reveal="'down'"
       v-if="productStore.activeProduct.application"
       class="py-16 container md:py-24 border-t border-infin-teritiary/30"
     >
@@ -321,9 +339,17 @@
 <script setup lang="ts">
 import { useProductStore } from '@/stores/productStore'
 import { useRoute } from 'vue-router'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 const route = useRoute()
-
+watch(
+  () => route.params.slug,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async (newSlug: any) => {
+    if (!newSlug) return
+    await productStore.fetchBySlug(newSlug as string)
+  },
+  { immediate: true },
+)
 const productStore = useProductStore()
 const loading = ref(false)
 const slug = route.params.slug
@@ -331,4 +357,23 @@ onMounted(async () => {
   if (slug) productStore.fetchBySlug(slug)
   else productStore.activeProduct = null
 })
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
 </script>

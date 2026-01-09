@@ -319,4 +319,24 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
+</script>

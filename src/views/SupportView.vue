@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <!-- CTA -->
-    <section class="relative container overflow-hidden py-16 border-b">
+    <section v-reveal="'up'" class="relative container overflow-hidden py-16 border-b">
       <div
         class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br frominfin/10 via-infin-secbg to-/20"
       ></div>
@@ -14,7 +14,7 @@
         </p>
       </div>
     </section>
-    <section class="relative container overflow-hidden py-16 border-b">
+    <section v-reveal="'down'" class="relative container overflow-hidden py-16 border-b">
       <FaqList />
     </section>
   </div>
@@ -22,4 +22,23 @@
 
 <script setup lang="ts">
 import FaqList from '@/components/FaqList.vue'
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
 </script>

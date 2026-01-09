@@ -41,7 +41,7 @@ const mapStrapiProduct = (item: any): Product => {
     treatmentIndications: item.treatmentIndications,
     clinicalBenefits: item.clinicalBenefits,
     application: item.application,
-    photo: item.photo ? `${API_URL}${item.photo.url}` : undefined,
+    photo: item.photo ? item.photo.url : undefined,
   }
 }
 

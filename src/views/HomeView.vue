@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <!-- HERO + LETTER INFO -->
-    <section class="container py-16">
+    <section v-reveal="'up'" class="container py-16">
       <div class="mx-auto flex flex-col md:flex-row items-start gap-10">
         <!-- Left -->
 
@@ -36,6 +36,7 @@
 
     <!-- Dermatology Products -->
     <section
+      v-reveal="'down'"
       v-if="!productStore.loading && productStore.dermatology.length > 0"
       class="container pt-16"
       id="ourproducts"
@@ -52,6 +53,7 @@
     </section>
 
     <section
+      v-reveal="'left'"
       v-else-if="productStore.loading"
       class="container pt-16 flex items-center justify-center"
       id="ourproducts"
@@ -64,6 +66,7 @@
 
     <!-- Ophthalmology Products -->
     <section
+      v-reveal="'right'"
       v-if="!productStore.loading && productStore.ophthalmology.length > 0"
       class="container pb-16"
       id="ourproducts"
@@ -91,7 +94,10 @@
     </section>
 
     <!-- STATEMENTS -->
-    <section class="container py-16 flex flex-col items-center space-y-6 text-center px-6 py-36">
+    <section
+      v-reveal="'leftt'"
+      class="container py-16 flex flex-col items-center space-y-6 text-center px-6 py-36"
+    >
       <p class="max-w-140 header">Redefining What's Possible in Modern Medical Technology</p>
       <p class="max-w-3xl bodytext">
         Infinity Medicals is built on one mission: redefining what's possible in modern medical
@@ -104,7 +110,7 @@
         and truly exceptional patient results.
       </p>
     </section>
-    <div class="w-full bg-infin-pribg">
+    <div v-reveal="'down'" class="w-full bg-infin-pribg">
       <section class="container py-16 flex flex-col items-center space-y-6 text-center px-6 py-36">
         <div class="flex justify-center">
           <svg
@@ -158,6 +164,25 @@ onMounted(async () => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function updateIndex(event: any) {
   index.value = event % 4
+}
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const infos: any[] = [

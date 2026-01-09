@@ -2,6 +2,7 @@
   <div class="relative">
     <!-- HERO -->
     <section
+      v-reveal="'up'"
       class="relative overflow-hidden border-b border-infin-teritiary/30 bg-background py-16 md:py-24"
     >
       <div
@@ -44,7 +45,7 @@
     </section>
 
     <!-- elevate -->
-    <section class="py-16 container md:py-24">
+    <section v-reveal="'down'" class="py-16 container md:py-24">
       <div class="max-w-3xl mx-auto space-y-6 text-center">
         <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
           Ready to Elevate Your Ophthalmic Practice?
@@ -57,7 +58,7 @@
       </div>
     </section>
     <!--  VISION -->
-    <section class="relative bg-infin-pribg/20 py-16 md:py-24">
+    <section v-reveal="'left'" class="relative bg-infin-pribg/20 py-16 md:py-24">
       <div
         class="absolute inset-0 bg-gradient-to-b from-background via-infin-pribg/20 to-background"
       ></div>
@@ -350,4 +351,24 @@ onMounted(async () => {
 const equipment = computed(() => {
   return productStore.ophthalmology.filter((s) => s.type === 'equipment')
 })
+
+const vReveal = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mounted(el: HTMLElement, binding: any) {
+    const direction = binding.value || 'up'
+    el.classList.add('reveal', `reveal-${direction}`)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          el.classList.add('reveal-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(el)
+  },
+}
 </script>
