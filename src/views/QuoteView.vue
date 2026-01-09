@@ -237,8 +237,11 @@
                   rows="4"
                 ></textarea>
               </div>
-              <div v-if="date" class="bg-infin/5 border border-infin/20 rounded-lg p-4">
-                <p class="text-sm">
+              <div
+                v-if="date"
+                class="bg-infin/5 dark:bg-white/5 dark:border-white/20 border border-infin/20 rounded-lg p-4"
+              >
+                <p class="text-sm text-infin dark:text-white">
                   <span class="font-semibold">Demo Date:</span>
                   {{
                     new Date(date.toString()).toLocaleDateString('en', {
