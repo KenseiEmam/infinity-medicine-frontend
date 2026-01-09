@@ -125,6 +125,13 @@
                   {{ eq.description }}
                 </p>
               </div>
+              <RouterLink
+                v-if="eq.department === 'dermatology'"
+                :to="'products/' + eq.slug"
+                class="w-full btn-lg-outline text-center block"
+              >
+                Learn More
+              </RouterLink>
               <a class="btn-lg" :href="'/quote?interest=' + eq.slug">Request Quote</a>
             </div>
           </div>
