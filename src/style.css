@@ -98,6 +98,10 @@ section {
   transform: scale(1.1);
 }
 
+.dark .letter-btn.active {
+  color: #e6e9f0;
+  transform: scale(1.1);
+}
 .letter-btn.active {
   color: #111827;
   transform: scale(1.1);
@@ -203,17 +207,17 @@ section {
     @apply px-3 py-2 rounded-lg text-infin dark:text-white border border-gray-300 focus:outline-infin focus:outline-1 bg-infin-secbg;
   }
   .pilltainer {
-    @apply inline-flex items-center justify-center rounded-full border border-infin/15 bg-infin/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] dark:text-white/70 text-infin/70;
+    @apply inline-flex items-center justify-center rounded-full border border-infin/15 dark:bg-white/10 dark:text-white/80 dark:border-white/5 bg-infin/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] dark:text-white/70 text-infin/70;
   }
   /* Product Card Form Control (if any forms inside cards) */
   .form-control {
     @apply flex flex-col gap-1 w-full;
   }
   .blurred-bg {
-    @apply backdrop-blur-md transition-all duration-700 ease-out border-gray-300/20 bg-infin-secbg/80;
+    @apply backdrop-blur-md transition-all duration-700 ease-out border-gray-300/20 bg-infin-secbg/80 dark:bg-gray-400/80;
   }
   .dropdown {
-    @apply bg-infin-secbg/80 text-infin-sectext z-50 max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md w-60;
+    @apply bg-infin-secbg/80 dark:bg-gray-400/80 text-infin-sectext z-50 max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md w-60;
   }
 }
 

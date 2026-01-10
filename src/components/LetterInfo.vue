@@ -4,7 +4,7 @@
       class="absolute w-full top-0 left-0 right-0 bottom-0 bg-[radial-gradient(circle_at_top,rgba(15,23,42,0.04)_0%,transparent_60%)] dark:bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.06)_0%,transparent_60%)]"
     ></div>
     <div
-      class="relative bg-infin-secbg/80 dark:bg-infin-darksecbg/80 overflow-hidden rounded-3xl border border-gray-200 p-6 shadow-sm"
+      class="relative bg-infin-secbg/80 dark:bg-gray-400/80 dark:bg-infin-darksecbg/80 overflow-hidden rounded-3xl border border-gray-200 p-6 shadow-sm"
     >
       <div class="mt-4 grid grid-cols-4 md:grid-cols-8 gap-4 md:gap-6">
         <button
@@ -27,7 +27,7 @@
     </div>
     <div
       v-if="current"
-      class="relative bg-infin-secbg/80 dark:bg-infin-darksecbg/80 rounded-3xl border border-gray-200 p-8 shadow-lg"
+      class="relative bg-infin-secbg/80 dark:bg-gray-400/80 dark:bg-infin-darksecbg/80 rounded-3xl border border-gray-200 p-8 shadow-lg"
     >
       <div class="flex items-start content-start gap-4">
         <div>

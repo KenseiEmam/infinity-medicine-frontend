@@ -8,7 +8,7 @@
       <div class="container">
         <div class="mx-auto max-w-3xl space-y-6 text-center">
           <span
-            class="inline-flex items-center justify-center rounded-full border border-infin/15 bg-infin/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-infin/80"
+            class="inline-flex items-center justify-center rounded-full border border-infin/15 dark:bg-white/10 dark:text-white/80 dark:border-white/5 bg-infin/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-infin/80"
             >Our Footprint</span
           >
           <h1 class="text-infin dark:text-white text-4xl font-bold tracking-tight md:text-5xl">
@@ -22,13 +22,13 @@
             class="flex flex-wrap justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-infin-secondary"
           >
             <span
-              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 px-4 py-1"
+              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 dark:bg-gray-400/80 px-4 py-1"
               >Kuwait Headquarters</span
             ><span
-              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 px-4 py-1"
+              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 dark:bg-gray-400/80 px-4 py-1"
               >Oman &amp; Egypt Operations</span
             ><span
-              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 px-4 py-1"
+              class="rounded-full border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/80 dark:bg-gray-400/80 px-4 py-1"
               >UAE Coming Soon</span
             >
           </div>
@@ -69,6 +69,18 @@
                   >Contact Team</a
                 >
               </div>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d869.5805759784804!2d48.0183685!3d29.3315487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9d7a4d9f1f11%3A0xe80fc34d460998d4!2z2YXYrNmF2Lkg2KfZhNi52K_Ys9in2YbZiiDYp9mE2KrYrNin2LHZig!5e0!3m2!1sar!2ssa!4v1768019733132!5m2!1sar!2ssa"
+                  height="250"
+                  class="w-full rounded-xl overflow-hidden shadow-lg border-infin-teritiary/30"
+                  style="border: 0"
+                  allowfullscreen="true"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+
               <div
                 class="space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
               >
@@ -159,6 +171,17 @@
                   >Contact Team</a
                 >
               </div>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3656.7493392698225!2d58.4184167!3d23.577444399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDM0JzM4LjgiTiA1OMKwMjUnMDYuMyJF!5e0!3m2!1sar!2ssa!4v1768019836675!5m2!1sar!2ssa"
+                  height="200"
+                  class="w-full rounded-xl overflow-hidden shadow-lg border-infin-teritiary/30"
+                  style="border: 0"
+                  allowfullscreen="true"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               <div
                 class="space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
               >
@@ -229,6 +252,17 @@
                   class="text-infin-secondary dark:text-gray-400 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-infin-secbg dark:bg-infin-darksecbg shadow-xs hover:bg-infin-terititary hover:text-infin dark:hover:text-white-teritiary 3ark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 gap-1.5 px-3 has-[&gt;svg]:px-2.5 rounded-full"
                   >Contact Team</a
                 >
+              </div>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.074386913945!2d31.2369671!3d30.034723699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841bd85d4d943%3A0xef7339b6ff620570!2zTW9idGFkeWFuIHRvd2VyIC0g2KjYsdisINin2YTZhdio2KrYr9mK2KfZhg!5e0!3m2!1sen!2ssa!4v1768019611644!5m2!1sen!2ssa"
+                  height="200"
+                  class="w-full rounded-xl overflow-hidden shadow-lg border-infin-teritiary/30"
+                  style="border: 0"
+                  allowfullscreen="true"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
               <div
                 class="space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
