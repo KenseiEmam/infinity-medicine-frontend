@@ -68,6 +68,7 @@
                     >Clinic Name *</label
                   ><input
                     data-slot="input"
+                    v-model="clinicName"
                     class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="clinicName"
                     :required="true"
@@ -81,6 +82,7 @@
                     for="contactName"
                     >Contact Name *</label
                   ><input
+                  v-model="contactName"
                     data-slot="input"
                     class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="contactName"
@@ -98,6 +100,7 @@
                     >Email Address *</label
                   ><input
                     data-slot="input"
+                    v-model="email"
                     class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="email"
                     :required="true"
@@ -115,6 +118,7 @@
                     data-slot="input"
                     class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     id="phone"
+                    v-model="phone"
                     :required="true"
                     placeholder="+965 XXXX XXXX"
                     type="tel"
@@ -130,6 +134,7 @@
                 >
                 <select
                   aria-hidden="true"
+                  v-model="country"
                   class="file:text-primary placeholder:text-infin-secondary dark:text-gray-400 selection:bg-infin dark:bg-infin-secbg dark:bg-infin-darksecbg selection:text-infin dark:text-white dark:bg-infin-teritiary/30 border-infin-teritiary h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-infin-teritiary focus-visible:ring-infin-teritiary/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                   :required="true"
                   tabindex="-1"
@@ -231,6 +236,7 @@
                   for="notes"
                   >Additional Notes</label
                 ><textarea
+                v-model="notes"
                   class="flex min-h-[80px] w-full rounded-md border border-infin-teritiary bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-infin-secondary dark:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infin-teritiary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   id="notes"
                   placeholder="Tell us about your specific requirements, questions, or any other details..."
@@ -283,7 +289,12 @@ const productStore = useProductStore()
 const loading = ref(false)
 const interest = ref(route.query.interest || '')
 const date = route.query.demo
-
+const clinicName = ref('')
+const contactName = ref('')
+const email = ref('')
+const phone = ref('')
+const country = ref('')
+const notes = ref('')
 const activeAccordion = ref<number | null>(null)
 
 const toggleAccordion = (index: number) => {
@@ -364,7 +375,23 @@ onMounted(async () => {
   }
 })
 
-const handleSubmit = () => {
-  alert(`Form submitted! Selected interest: ${interest.value}, Selected day:${date}`)
+async function handleSubmit() {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/contact/submit`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      clinicName: clinicName.value,
+      contactName: contactName.value,
+      email: email.value,
+      phone: phone.value,
+      country: country.value,
+      interest: interest.value,
+      demoDate: date ?? null,
+      notes: notes.value,
+    }),
+  })
+
+  alert('Form submitted successfully')
 }
+
 </script>
