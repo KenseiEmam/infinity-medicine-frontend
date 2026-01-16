@@ -61,7 +61,7 @@ export const useProductStore = defineStore('product', () => {
   const fetchProducts = async (filters?: string): Promise<Product[]> => {
     try {
       const url = filters
-        ? `${API_URL}/api/products?populate=*&${filters}`
+        ? `${API_URL}/api/products?populate=*&${filters}&pagination[pageSize]=100`
         : `${API_URL}/api/products?populate=*`
       const res = await axios.get(url)
       const products = res.data.data.map(mapStrapiProduct)

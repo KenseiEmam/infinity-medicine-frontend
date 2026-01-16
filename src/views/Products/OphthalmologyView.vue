@@ -87,7 +87,7 @@
             </p>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <div
-                v-for="eq in equipment"
+                v-for="eq in paginatedEquipment"
                 :key="eq.slug"
                 data-slot="card"
                 class="text-infin-secondary dark:text-gray-400 gap-6 rounded-xl py-6 flex h-full flex-col overflow-hidden border border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg dark:bg-infin-darksecbg shadow-sm transition-shadow hover:shadow-md"
@@ -102,7 +102,7 @@
                   <div class="space-y-2">
                     <h3 class="text-base font-semibold">{{ eq.name }}</h3>
                     <p
-                      class="text-xs text-infin-secondary dark:text-gray-400 line-clamp-4 leading-relaxed md:text-sm"
+                      class="text-xs text-infin-secondary dark:text-gray-400 line-clamp-4 md:line-clamp-5 leading-relaxed "
                     >
                       {{ eq.description }}
                     </p>
@@ -112,6 +112,24 @@
                   >
                 </div>
               </div>
+            </div>
+            <div class="flex justify-center gap-2 pt-6">
+              <button v-if="currentPage >1 " class="btn-lg-outline" :disabled="currentPage === 1" @click="currentPage--">
+                Previous
+              </button>
+
+              <span class="flex items-center px-4 text-sm">
+                Page {{ currentPage }} of {{ totalPages }}
+              </span>
+
+              <button
+              v-if="currentPage < totalPages"
+                class="btn-lg-outline"
+                :disabled="currentPage === totalPages"
+                @click="currentPage++"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
@@ -347,14 +365,30 @@
 <script setup lang="ts">
 import { useProductStore } from '@/stores/productStore'
 // import FaqList from '@/components/FaqList.vue'
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 const productStore = useProductStore()
+const itemsPerPage = 8
+const currentPage = ref(1)
+
+const equipment = computed(() => {
+  return productStore.ophthalmology.filter((s) => s.type === 'equipment')
+})
+
+const totalPages = computed(() =>
+  Math.ceil(equipment.value.length / itemsPerPage),
+)
+
+const paginatedEquipment = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  return equipment.value.slice(start, start + itemsPerPage)
+})
 
 onMounted(async () => {
   productStore.fetchOphthalmology()
 })
-const equipment = computed(() => {
-  return productStore.ophthalmology.filter((s) => s.type === 'equipment')
+
+watch(equipment, () => {
+  currentPage.value = 1
 })
 
 const vReveal = {
