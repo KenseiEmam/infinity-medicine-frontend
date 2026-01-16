@@ -74,6 +74,10 @@
           <div
             class="text-infin-secondary dark:text-gray-400 gap-6 rounded-xl border py-6 flex h-full flex-col border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/85 dark:bg-infin-darksecbg/85 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
+          <div class="bg-infin-secbg  dark:bg-infin-darksecbg">
+             <img class="h-24 md:h-36 2xl:h-44 mx-auto" src="https://res.cloudinary.com/dhm67jkou/image/upload/v1768536337/lavieen_f75dfd673e_33dd26455a.png" alt="">
+          </div>
+
             <div class="grid auto-rows-min items-start gap-2 px-6">
               <div class="text-2xl font-semibold">Lavieen BB Laser</div>
             </div>
@@ -91,6 +95,9 @@
           <div
             class="text-infin-secondary dark:text-gray-400 gap-6 rounded-xl border py-6 flex h-full flex-col border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/85 dark:bg-infin-darksecbg/85 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
+           <div class="bg-infin-secbg  dark:bg-infin-darksecbg">
+             <img class="h-24 md:h-36 2xl:h-44 mx-auto" src="https://res.cloudinary.com/dhm67jkou/image/upload/v1768536098/virtue_rf_346c031aa6_5f712a335e.png" alt="">
+          </div>
             <div class="grid auto-rows-min items-start gap-2 px-6">
               <div class="text-2xl font-semibold">Virtue RF</div>
             </div>

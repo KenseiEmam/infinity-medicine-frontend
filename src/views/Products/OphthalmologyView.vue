@@ -57,6 +57,51 @@
         <a data-slot="button" class="btn-lg" href="/demo">Book a Demo</a>
       </div>
     </section>
+    <!-- SPOTLIGHT -->
+    <section
+      v-reveal="'left'"
+      class="relative dark:bg-infin-darkpribg bg-infin-pribg/20 py-16 md:py-24"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br dark:bg-infin dark:bg-none from-infin/10 via-infin-pribg/30 to-background"
+      ></div>
+
+      <div class="container relative space-y-8">
+        <div class="max-w-2xl space-y-4">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl text-infin dark:text-white">
+            Product Spotlight
+          </h2>
+        </div>
+
+        <div class="grid gap-6">
+          <!-- Card 1 -->
+          <div
+            class="text-infin-secondary dark:text-gray-400 gap-6 rounded-xl border py-6 flex h-full flex-col border-infin-teritiary/30 dark:border-infin/30 bg-infin-secbg/85 dark:bg-infin-darksecbg/85 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div class="bg-infin-secbg dark:bg-infin-darksecbg">
+              <img
+                class="h-24 md:h-36 2xl:h-44 mx-auto"
+                src="https://res.cloudinary.com/dhm67jkou/image/upload/v1768536087/Screenshot_2025_07_29_194242_7a25560bc0_dd7eb5c549.webp"
+                alt=""
+              />
+            </div>
+
+            <div class="grid auto-rows-min items-start gap-2 px-6">
+              <div class="text-2xl font-semibold">PLEXR</div>
+            </div>
+
+            <div class="px-6 flex flex-1 flex-col justify-between space-y-6">
+              <p class="text-sm text-infin-secondary dark:text-gray-400 leading-relaxed">
+                PLEXR utilises focused plasma flashes to sublimate superficial tissue, enabling
+                non-surgical blepharoplasty, scar revision, wrinkle reduction, and lesion removal
+                with minimal downtime.
+              </p>
+              <a class="btn-lg-outline" href="/products/plexr"> View Device </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!--  VISION -->
     <section
       v-reveal="'left'"
@@ -81,10 +126,18 @@
             data-slot="card-content"
             class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
-            <p>
-              OCT, topography, and imaging systems that deliver precise diagnostics to guide
-              confident ophthalmic decision-making.
-            </p>
+            <div class="flex gap-6 2xl:gap-10 justify-between items-center">
+              <p>
+                OCT, topography, and imaging systems that deliver precise diagnostics to guide
+                confident ophthalmic decision-making.
+              </p>
+              <a
+                href="https://mega.nz/folder/NA9hVB6Y#LlvQRGzCVZMDSH1zk6asVg"
+                target="_blank"
+                class="btn-lg-outline"
+                >View Documents</a
+              >
+            </div>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <div
                 v-for="eq in paginatedEquipment"
@@ -102,7 +155,7 @@
                   <div class="space-y-2">
                     <h3 class="text-base font-semibold">{{ eq.name }}</h3>
                     <p
-                      class="text-xs text-infin-secondary dark:text-gray-400 line-clamp-4 md:line-clamp-5 leading-relaxed "
+                      class="text-xs text-infin-secondary dark:text-gray-400 line-clamp-4 md:line-clamp-5 leading-relaxed"
                     >
                       {{ eq.description }}
                     </p>
@@ -114,7 +167,12 @@
               </div>
             </div>
             <div class="flex justify-center gap-2 pt-6">
-              <button v-if="currentPage >1 " class="btn-lg-outline" :disabled="currentPage === 1" @click="currentPage--">
+              <button
+                v-if="currentPage > 1"
+                class="btn-lg-outline"
+                :disabled="currentPage === 1"
+                @click="currentPage--"
+              >
                 Previous
               </button>
 
@@ -123,7 +181,7 @@
               </span>
 
               <button
-              v-if="currentPage < totalPages"
+                v-if="currentPage < totalPages"
                 class="btn-lg-outline"
                 :disabled="currentPage === totalPages"
                 @click="currentPage++"
@@ -148,10 +206,19 @@
             data-slot="card-content"
             class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
-            <p>
-              Cutting-edge refractive platforms that support accurate measurements for cataract,
-              refractive, and vision correction procedures.
-            </p>
+            <div class="flex gap-6 2xl:gap-10 justify-between items-center">
+              <p>
+                Cutting-edge refractive platforms that support accurate measurements for cataract,
+                refractive, and vision correction procedures.
+              </p>
+              <a
+                href="https://mega.nz/folder/NA9hVB6Y#LlvQRGzCVZMDSH1zk6asVg"
+                target="_blank"
+                class="btn-lg"
+                >View Documents</a
+              >
+            </div>
+
             <ul class="space-y-2">
               <li class="flex items-center justify-between gap-4">
                 <span>Wavefront Aberrometers</span
@@ -216,7 +283,7 @@
             <ul class="space-y-2">
               <li class="flex items-center justify-between gap-4">
                 <span>PLEXR Plasma Platform</span
-                ><a data-slot="button" class="btn-lg-outline" href="/products/plexr">View</a>
+                ><a data-slot="button" class="btn-lg" href="/products/plexr">View</a>
               </li>
               <li class="flex items-center justify-between gap-4">
                 <span>Plasma Pen Consumable Kits</span
@@ -254,10 +321,20 @@
             data-slot="card-content"
             class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
-            <p>
-              Curated sets of microsurgical tools designed for ophthalmic precision, durability, and
-              consistent performance.
-            </p>
+            <div class="flex gap-6 2xl:gap-10 justify-between items-center">
+              <p>
+                Curated sets of microsurgical tools designed for ophthalmic precision, durability,
+                and consistent performance.
+              </p>
+              <a
+                href="https://mega.nz/file/VAE2QSwI#pfafJ8FhwwIeZ-R3JdSR4fjxHP-2daH2jgKwiARkSHE"
+                target="_blank"
+                class="btn-lg"
+                >View Documents</a
+              >
+            </div>
+
+            <p></p>
             <ul class="space-y-2">
               <li class="flex items-center justify-between gap-4">
                 <span>Microsurgical Forceps &amp; Scissors</span
@@ -313,10 +390,19 @@
             data-slot="card-content"
             class="px-6 space-y-4 text-sm text-infin-secondary dark:text-gray-400 leading-relaxed"
           >
-            <p>
+            <div class="flex gap-6 2xl:gap-10 justify-between items-center">
+              <p>
               Reliable single-use consumables that maintain sterile environments and streamline
               ophthalmic operating workflows.
             </p>
+              <a
+                href="https://mega.nz/folder/AdNxAYoT#mU9cBb6IwJ-iQ40Dy7BSfQ"
+                target="_blank"
+                class="btn-lg"
+                >View Documents</a
+              >
+            </div>
+
             <ul class="space-y-2">
               <li class="flex items-center justify-between gap-4">
                 <span>Ophthalmic Drapes &amp; Packs</span
@@ -374,9 +460,7 @@ const equipment = computed(() => {
   return productStore.ophthalmology.filter((s) => s.type === 'equipment')
 })
 
-const totalPages = computed(() =>
-  Math.ceil(equipment.value.length / itemsPerPage),
-)
+const totalPages = computed(() => Math.ceil(equipment.value.length / itemsPerPage))
 
 const paginatedEquipment = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage

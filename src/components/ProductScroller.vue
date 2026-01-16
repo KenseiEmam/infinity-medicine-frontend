@@ -66,7 +66,12 @@
 </template>
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
-
+const clampOffset = () => {
+  if (!track.value) return
+  const halfWidth = track.value.scrollWidth / 2
+  if (offset.value < 0) offset.value = 0
+  if (offset.value > halfWidth) offset.value = halfWidth
+}
 /* =========================
    Props
 ========================= */
@@ -139,6 +144,7 @@ const resume = () => (paused = false)
 const onWheel = (e: WheelEvent) => {
   pause()
   offset.value += Math.sign(e.deltaY) * 120
+  clampOffset()
 }
 
 /* Drag */
@@ -156,6 +162,7 @@ const onMouseDown = (e: MouseEvent) => {
 const onMouseMove = (e: MouseEvent) => {
   if (!dragging) return
   offset.value = dragStartOffset - (e.clientX - dragStartX)
+  clampOffset()
 }
 
 const onMouseUp = () => {
