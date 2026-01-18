@@ -261,11 +261,21 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
 
 const showCategories = ref(false)
 const showCategories2 = ref(false)
 const mobileOpen = ref(false)
+const route = useRoute()
+
+watch(
+  () => route.fullPath,
+  () => {
+    mobileOpen.value = false
+  },
+)
 
 const toggleDark = (): void => {
   const darkmode = localStorage.getItem('darkmode')

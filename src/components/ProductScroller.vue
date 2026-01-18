@@ -1,18 +1,20 @@
 <template>
   <div
-    class="mx-auto px-6 pb-6 overflow-hidden relative"
-    @mouseenter="pause"
-    @mouseleave="resume"
-    @wheel.prevent="onWheel"
-    @mousedown="onMouseDown"
-    @mouseup="onMouseUp"
-    @mousemove="onMouseMove"
-  >
+  class="mx-auto px-6 pb-6 overflow-hidden relative"
+  @pointerdown="onPointerDown"
+  @pointermove="onPointerMove"
+  @pointerup="onPointerUp"
+  @pointercancel="onPointerUp"
+  @pointerenter="pause"
+  @pointerleave="resume"
+  @wheel.prevent="onWheel"
+>
+
     <div
-      class="absolute w-32 md:w-64 h-full bg-gradient-to-r dark:from-infin-darksecbg from-infin-secbg to-transparent left-0 z-20"
+      class="absolute md:w-64 h-full bg-gradient-to-r dark:from-infin-darksecbg from-infin-secbg to-transparent left-0 z-20"
     ></div>
     <div
-      class="absolute w-32 md:w-64 h-full bg-gradient-to-l dark:from-infin-darksecbg from-infin-secbg to-transparent right-0 z-20"
+      class="absolute  md:w-64 h-full bg-gradient-to-l dark:from-infin-darksecbg from-infin-secbg to-transparent right-0 z-20"
     ></div>
     <div
       ref="track"
@@ -152,21 +154,27 @@ let dragging = false
 let dragStartX = 0
 let dragStartOffset = 0
 
-const onMouseDown = (e: MouseEvent) => {
+const onPointerDown = (e: PointerEvent) => {
   dragging = true
   dragStartX = e.clientX
   dragStartOffset = offset.value
   pause()
 }
 
-const onMouseMove = (e: MouseEvent) => {
+const onPointerMove = (e: PointerEvent) => {
   if (!dragging) return
   offset.value = dragStartOffset - (e.clientX - dragStartX)
   clampOffset()
 }
 
-const onMouseUp = () => {
+const onPointerUp = () => {
   dragging = false
   resume()
 }
+
 </script>
+<style scoped>
+.product-card {
+  touch-action: pan-y;
+}
+</style>
