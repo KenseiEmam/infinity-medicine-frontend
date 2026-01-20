@@ -148,6 +148,14 @@
         >
           Whatsapp
         </a>
+        <a
+          href="https://m.youtube.com/@InfinityMedicalKuwait"
+          target="_blank"
+          rel="noopener"
+          class="text-infin-secondary dark:text-gray-400 text-sm hover:text-infin dark:hover:text-white dark:text-white transition"
+        >
+          Youtube
+        </a>
        </div>
       </div>
     </div>
