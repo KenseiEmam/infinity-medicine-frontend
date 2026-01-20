@@ -42,6 +42,12 @@
               ><a :href="'/demo?interest=' + productStore.activeProduct.slug"
                 ><button data-slot="button" class="btn-lg-outline">Book a Demo</button></a
               >
+
+            </div>
+            <div>
+              <a v-if="productStore.activeProduct.keyFeatures.pdf" :href="productStore.activeProduct.keyFeatures.pdf" target="_blank"
+               class="text-sm font-semibold underline text-infin-sectext dark:text-infin-darksectext" >View Brochure >></a
+              >
             </div>
             <div
               class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-infin-teritiary/50"
