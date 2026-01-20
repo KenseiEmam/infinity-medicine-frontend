@@ -6,7 +6,7 @@
       <!-- Logo -->
       <div class="w-64 flex items-center">
         <div class="flex items-center gap-2">
-          <img class="h-8" src="@/assets/logo.png" alt="">
+          <img class="h-12" src="@/assets/logo.png" alt="">
           <span class="text-lg font-bold tracking-extra-trackinge text-infin dark:text-white"
             >INFINITY MEDICALS</span
           >
@@ -302,15 +302,15 @@ const dermeq = [
   { label: 'Lavieen', to: '/products/lavieen' },
   { label: 'Virtue RF', to: '/products/virtue-rf' },
   { label: 'V Laser', to: '/products/v-laser' },
-  // { label: 'PLADUO', to: '/products/pladuo' },
-  // { label: 'PLEXR', to: '/products/plexr' },
+  { label: 'PLADUO', to: '/products/pladuo' },
+  { label: 'PLEXR', to: '/products/plexr' },
 ]
 const dermprod = [
   { label: 'QR678 Injectable', to: '/products/qr678-injectable' },
   { label: 'QR678 Serum', to: '/products/qr678-serum' },
   { label: 'QR678 Shampoo', to: '/products/qr-678-fortifying-shampoo' },
   { label: 'Skin-F', to: '/products/skin-f' },
-  { label: 'EPTQ Filler', to: '/products/e-p-t-q-filler' },
+  { label: 'e.p.t.q Filler', to: '/products/e-p-t-q-filler' },
 ]
 const oph = [
   { label: 'Diagnostic Equipment', to: '/ophthalmology#diagnostic-equipment' },

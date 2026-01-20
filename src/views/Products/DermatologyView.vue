@@ -124,6 +124,14 @@
           Dedicated technologies and treatment protocols for hair restoration, scalp health, and
           regenerative trichology.
         </p>
+        <div class="py-4">
+          <a
+                href="https://mega.nz/file/JAFjFChY#p2v91hBcT0clr82A-JOt1BKKJVMxuwjfvrWb7BcTUmQ"
+                target="_blank"
+                class="btn-lg"
+                >View Documents</a
+              >
+        </div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div
             v-for="eq in consumables"
@@ -184,9 +192,15 @@
           id="diagnostic-equipment"
         >
           <div
-            class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
+            class="@container/card-header gap-2 px-6 flex items-center justify-between [.border-b]:pb-6"
           >
             <div class="text-2xl font-semibold">Dermatology Equipment</div>
+             <a
+                href="https://mega.nz/file/REtiFByC#2AnySvsXUR2f_OkSbVcrHbgDJ6D0Ce1JadCHmNzioV4"
+                target="_blank"
+                class="btn-lg"
+                >View Documents</a
+              >
           </div>
 
           <div

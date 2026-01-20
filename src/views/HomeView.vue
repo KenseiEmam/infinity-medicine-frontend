@@ -47,7 +47,7 @@
         <RouterLink to="/dermatology" class="linktext"> View All >> </RouterLink>
       </div>
 
-      <ProductScroller :productsList="productStore.dermatology.slice(0, 6)" />
+      <ProductScroller :productsList="spotlightDerma" />
     </section>
 
     <section
@@ -153,7 +153,8 @@ import LetterInfo from '@/components/LetterInfo.vue'
 import ProductScroller from '@/components/ProductScroller.vue'
 import { useProductStore } from '@/stores/productStore'
 // import FaqList from '@/components/FaqList.vue'
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+
 const productStore = useProductStore()
 const index = ref(0)
 
@@ -165,6 +166,9 @@ onMounted(async () => {
 function updateIndex(event: any) {
   index.value = event % 4
 }
+const spotlightDerma = computed(() => {
+  return productStore.dermatology.filter((s) => s.slug === 'lavieen'|| s.slug === 'virtue-rf'|| s.slug === 'plexr' || s.slug === 'qr-678-fortifying-shampoo' || s.slug === 'qr678-serum' || s.slug === 'qr678-injectable')
+})
 const vReveal = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mounted(el: HTMLElement, binding: any) {
@@ -184,10 +188,11 @@ const vReveal = {
     observer.observe(el)
   },
 }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const infos: any[] = [
   {
-    title: 'Infinity Medicine',
+    title: 'Infinity Medicals',
     text: 'From onboarding to lifetime maintenance, our engineers and clinical educators stay by your side.',
   },
   {

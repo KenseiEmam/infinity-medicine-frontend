@@ -124,12 +124,28 @@
 
         <h3 class="text-lg font-bold mb-2">Follow us on</h3>
         <a
-          href="https://www.instagram.com/infinitymedicals/"
+          href="https://www.instagram.com/infinitymedicalkwt/?hl=en"
           target="_blank"
           rel="noopener"
           class="text-infin-secondary dark:text-gray-400 text-sm hover:text-infin dark:hover:text-white dark:text-white transition"
         >
           Instagram
+        </a>
+        <a
+          href="https://www.facebook.com/share/1HcsPrBVT9/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener"
+          class="text-infin-secondary dark:text-gray-400 text-sm hover:text-infin dark:hover:text-white dark:text-white transition"
+        >
+          Facebook
+        </a>
+        <a
+          href="https://api.whatsapp.com/send/?phone=96596671100&text&type=phone_number&app_absent=0&utm_source=ig"
+          target="_blank"
+          rel="noopener"
+          class="text-infin-secondary dark:text-gray-400 text-sm hover:text-infin dark:hover:text-white dark:text-white transition"
+        >
+          Whatsapp
         </a>
       </div>
     </div>
