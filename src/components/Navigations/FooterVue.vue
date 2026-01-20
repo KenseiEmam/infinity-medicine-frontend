@@ -123,7 +123,8 @@
         </p>
 
         <h3 class="text-lg font-bold mb-2">Follow us on</h3>
-        <a
+       <div class="flex flex-col gap-2">
+         <a
           href="https://www.instagram.com/infinitymedicalkwt/?hl=en"
           target="_blank"
           rel="noopener"
@@ -147,6 +148,7 @@
         >
           Whatsapp
         </a>
+       </div>
       </div>
     </div>
 
